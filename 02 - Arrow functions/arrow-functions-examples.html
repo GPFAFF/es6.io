@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Arrow functions examples</title>
 </head>
+
 <body>
-<script>
+  <script>
+    const race = '100m Dash';
+    const winners = ['Hunter Gath', 'Singa Song', 'Imda Bos'];
 
-const race = '100m Dash';
-const winners = ['Hunter Gath', 'Singa Song', 'Imda Bos'];
+    const win = winners.map((winner, i) => ({
+      name: winner,
+      race,
+      place: i + 1
+    }));
 
-const win = winners.map((winner, i) => ({name: winner, race, place: i + 1}));
+    const ages = [23, 62, 45, 234, 2, 62, 234, 62, 34];
 
-const ages = [23,62,45,234,2,62,234,62,34];
+    const old = ages.filter(age => age >= 60);
 
-const old = ages.filter(age => age >= 60);
-console.log(old);
+    const meh = [{
+        block_type: 'Hero'
+      },
+      {
+        block_type: 'Offer'
+      },
+      {
+        block_type: 'Legal'
+      }
+    ]
 
-</script>
+    const remove = meh.filter(block => (block.block_type === 'Legal'));
+    meh.pop();
+    console.log(typeof meh);
+    console.log(old);
+  </script>
 </body>
+
 </html>
